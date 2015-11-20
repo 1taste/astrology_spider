@@ -83,3 +83,10 @@ NEWSPIDER_MODULE = 'astrology_spider.spiders'
 #HTTPCACHE_DIR='httpcache'
 #HTTPCACHE_IGNORE_HTTP_CODES=[]
 #HTTPCACHE_STORAGE='scrapy.extensions.httpcache.FilesystemCacheStorage'
+ITEM_PIPELINES = {
+    'astrology_spider.pipelines.ValidatePipeline': 100,
+    'astrology_spider.pipelines.DataBasePipeline': 300
+}
+LOG_LEVEL = 'ERROR'
+COOKIES_ENABLED = False
+CONCURRENT_REQUESTS = 100
